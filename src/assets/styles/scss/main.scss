@@ -1,0 +1,262 @@
+@import 'variables';
+@import 'structure';
+
+
+
+
+h1{
+    font-size: $v-font-4;
+}
+h2,h3,h4{
+    font-size: $v-font-3;
+}
+h4,p,a{
+    font-size: $v-font-2;
+}
+a,button{
+    box-sizing: border-box;
+}
+h1,p{
+    max-width: 75vw;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-small{
+    font-size: $v-font-1;
+}
+.btn-style-1{
+    min-width: 223px;
+    background-color: $v-color-sub-2;
+    padding: 10px;
+    // border-radius: 10px;
+    border: 1px solid $v-color-sub-2;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.btn-style-2{
+    display: block;
+    text-decoration: none;
+    margin-top: $v-space-3;
+    background-color: $v-color-sub;
+    color: white;
+    padding: $v-space-2;
+}
+
+
+//Header ...........................................................................................................................
+.qz-app-header{
+    height: 52px;
+    background-color: $v-color-main;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 $v-space-2;
+    svg{
+        width: 100px;
+        fill:$v-color-white;
+    }
+}
+
+
+
+
+// Home View.........................................................................................................................
+.qz-home-view{
+    text-align: center;
+    background-color: $v-color-main-2;
+    width: 100%;
+    min-height: calc(100vh - 52px);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1,p{
+        color: $v-color-white;
+        margin-bottom: $v-space-2;
+    }
+    .qz-home-nav{
+        width: 458px;
+        max-width: 100%;
+        justify-content: center;
+        display: flex;
+        padding-top: $v-space-3;
+        padding-bottom: $v-space-3;
+        @media only screen and (max-width: $v-breakpoint_md) {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            background: transparent;
+            padding: $v-space-1 0;
+            // border-radius: 10px;
+            border: 1px solid white;
+            color: white;
+            margin-left: $v-space-1;
+            margin-right: $v-space-1;
+            width: 306px;
+            background: transparent;
+            display: block;
+            text-align: center;
+            max-width: 80vw;
+            @media only screen and (max-width: $v-breakpoint_md) {
+                &:last-child{
+                    margin-bottom: $v-space-2;
+                }
+            }
+        }
+        a{
+            @extend .btn-style-1;
+            @media only screen and (max-width: $v-breakpoint_md) {
+                max-width: 80vw;
+                width: 306px;
+                margin-bottom: $v-space-2;
+            }
+        }
+    }
+    .qz-skip{
+        margin-top: $v-space-2;
+        background: none;
+        border: none;
+        color: white;
+    }
+    select{
+        min-width: 199px;
+        color: white;
+        option{
+            color: $v-color-black;
+        }
+    }
+    svg{
+        color: white;
+    }
+    label{
+        color: $v-color-white;
+    }
+    .MuiFilledInput-underline::before{
+        border-bottom: none;
+    }
+}
+
+
+
+//Quizz View........................................................................................................................
+.qz-quizz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding-top: $v-space-3;
+    padding-bottom: $v-space-3;
+    flex-direction: column;
+
+
+    .qz-quizz-loading{
+        .MuiCircularProgress-root{
+            width: 80px!important;
+            height: 80px!important;
+        }
+    }
+
+
+    .qz-quizz-not-found{
+        h2{
+            max-width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: $v-color-black;
+        }
+    }
+    .qz-quizz-questions{
+        text-align: center;
+        color: $v-color-black;
+        .qz-quizz-questions-score{
+            margin-bottom: $v-space-1;
+        }
+        .qz-quizz-questions-start{
+            
+            @extend .btn-style-1;
+            margin-top: $v-space-2;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .qz-quizz-questions-question-number{
+        margin-bottom: $v-space-2;
+        font-size: $v-font-3;
+        color: $v-color-sub;
+    
+    }
+    .qz-quizz-questions-question{
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+    .qz-quizz-questions-check{
+        @extend .btn-style-1;
+        margin-top: $v-space-2;
+    }
+    .qz-quizz-questions-next{
+        @extend .btn-style-1;
+        margin-top: $v-space-2;
+        background-color: $v-color-sub;
+        border-color:$v-color-sub;
+    }
+
+
+    .qz-quizz-questions-completed{
+        @extend .qz-quizz-questions;
+        max-width: 75vw;
+        margin-top: 10vh;
+        background-color: #fff;
+        padding: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        min-height: 316px;
+        box-shadow: 1px 2px 5px rgba(140, 118, 118, 0.3);
+        padding-bottom: 10px;
+        padding-top: 30px;
+        .qz-quizz-questions-score{
+            font-size: $v-font-3;
+            margin-top: $v-space-2;
+        }
+        h1{
+            margin-bottom: $v-space-1;
+        }
+        p{
+            width: 400px;
+            max-width: 92%;
+        }
+        .qz-quizz-questions-completed-return{
+            @extend .btn-style-2;
+        }
+    }
+   
+
+
+}
+
+
+// 404
+.qz-404{
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h1{
+        font-size: 97px;
+        color: #2c2c31;
+    }
+    a{
+        @extend .btn-style-2;
+        width: 247px;
+        max-width: 81vw;
+    }
+}

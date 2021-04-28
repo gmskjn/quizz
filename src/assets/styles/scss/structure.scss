@@ -1,0 +1,51 @@
+.test{
+    background-color: $v-color-main;
+    padding: 10px;
+}
+.block{
+    display: block;
+}
+.heavy{
+    font-weight: 600;
+}
+.reply-is-true{
+    color: green;
+    .Mui-checked{
+        color: green!important;
+    }
+}
+.reply-is-false{
+    color: red;
+    .Mui-checked{
+        color: red!important;
+    }
+}
+
+.message-is-false,.message-is-true{
+    font-size: $v-font-2;
+    padding: $v-space-2;
+    display: block;
+    margin-bottom: $v-space-2;
+    border-radius: 5px;
+    color: white;
+    max-width: 81%;
+margin-left: auto;
+margin-right: auto;
+}
+
+.message-is-true{
+    background-color: #2a952a;
+}
+.message-is-false{
+    background-color: #d42e18;
+}
+
+.qz-global-error{
+    position: fixed;
+    bottom: 0;
+    padding: 20px 10px;
+    background-color: #d01616;
+    width: 100vw;
+    left: 0;
+    color: white;
+}
